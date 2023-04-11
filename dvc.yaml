@@ -37,12 +37,10 @@ stages:
     - data/cleaned/Requests_TEST.pqt
     outs:
     - data/preprocessed/Records_TRAIN.pqt
-    - data/preprocessed/Representations_TRAIN.pqt
     - data/preprocessed/Consumptions_TRAIN.pqt
     - data/preprocessed/Requests_TRAIN.pqt
     - data/preprocessed/PowerThefts_TRAIN.pqt
     - data/preprocessed/Records_TEST.pqt
-    - data/preprocessed/Representations_TEST.pqt
     - data/preprocessed/Consumptions_TEST.pqt
     - data/preprocessed/Requests_TEST.pqt
     - data/pivoted/test_users.pqt

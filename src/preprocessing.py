@@ -1,11 +1,6 @@
-import random
-import argparse
-import yaml
 from loguru import logger
 import pandas as pd
 import numpy as np
-import pickle
-from sklearn.preprocessing import LabelEncoder
 
 from os.path import join
 import sys
@@ -218,6 +213,7 @@ def get_test_users(datasets):
     # display(test_users.sum())
     # print('\nAmount of absent values in each tables:')
     # display((test_users==0).sum())
+    return test_users
 
 
 def save_test_users(test_users):
@@ -262,20 +258,21 @@ def save_preprocessed(
 ):
 
     logger.info("Saving preprocessed data")
-    Consumptions_TRAIN.to_parquet(join(output_path, "Consumptions_TRAIN.pqt", index=False))
-    Requests_TRAIN.to_parquet(join(output_path, "Requests_TRAIN.pqt", index=False))
-    Records_TRAIN.to_parquet(join(output_path, "Records_TRAIN.pqt", index=False))
-    PowerThefts_TRAIN.to_parquet(join(output_path, "PowerThefts_TRAIN.pqt", index=False))
-    Consumptions_TEST.to_parquet(join(output_path, "Consumptions_TEST.pqt", index=False))
-    Requests_TEST.to_parquet(join(output_path, "Requests_TEST.pqt", index=False))
-    Records_TEST.to_parquet(join(output_path, "Records_TEST.pqt", index=False))
+    Consumptions_TRAIN.to_parquet(join(output_path, "Consumptions_TRAIN.pqt"), index=False)
+    Requests_TRAIN.to_parquet(join(output_path, "Requests_TRAIN.pqt"), index=False)
+    Records_TRAIN.to_parquet(join(output_path, "Records_TRAIN.pqt"), index=False)
+    PowerThefts_TRAIN.to_parquet(join(output_path, "PowerThefts_TRAIN.pqt"), index=False)
+    Consumptions_TEST.to_parquet(join(output_path, "Consumptions_TEST.pqt"), index=False)
+    Requests_TEST.to_parquet(join(output_path, "Requests_TEST.pqt"), index=False)
+    Records_TEST.to_parquet(join(output_path, "Records_TEST.pqt"), index=False)
 
 
 if __name__ == "__main__":
     cleaned = load_cleaned_data()
+    test_users = get_test_users(cleaned)
     processed = preprocess(cleaned)
 
     save_preprocessed(*processed)
 
-    save_test_users(get_test_users())
+    save_test_users(test_users)
     logger.info("Preprocessing complete.")

@@ -1,0 +1,146 @@
+schema: '2.0'
+stages:
+  clean:
+    cmd: poetry run python src/clean.py
+    deps:
+    - path: data/raw/Consumptions_TEST.csv
+      md5: 36d1bc42630e91ade3e130c7920af34a
+      size: 221175491
+    - path: data/raw/Consumptions_TRAIN.csv
+      md5: 6ee1e957e466c58e5c60be21465b90e5
+      size: 2834525078
+    - path: data/raw/PowerThefts_TRAIN.csv
+      md5: c1a876318210be91d68e0e0155ca9184
+      size: 1024216
+    - path: data/raw/Records_TEST.csv
+      md5: 5df8db41c61b322f9ec8ecdc0570ce0a
+      size: 27904492
+    - path: data/raw/Records_TRAIN.csv
+      md5: 8b63d305151b627e7194d13cdf5cdc8c
+      size: 256398694
+    - path: data/raw/Representations_TEST.csv
+      md5: 4e192cd167ff69c2c9dafb954a7b0d6e
+      size: 24605073
+    - path: data/raw/Representations_TRAIN.csv
+      md5: cfedccbb8689e16715cbb9a2e631e229
+      size: 221303384
+    - path: data/raw/Requests_TEST.csv
+      md5: 869595c986816fa170145bfb4d67bc66
+      size: 17585148
+    - path: data/raw/Requests_TRAIN.csv
+      md5: 0948f6afd6f6c6b7a88e71081503a42d
+      size: 438925797
+    outs:
+    - path: data/cleaned/ACCT_NBR_label_encoder.pkl
+      md5: b889089132bc461bcf8a46fb7b7edfb3
+      size: 531592157
+    - path: data/cleaned/Consumptions_TEST.pqt
+      md5: a55d3947d522ce6ebf12334696316cac
+      size: 59261862
+    - path: data/cleaned/Consumptions_TRAIN.pqt
+      md5: 21cd98d97039d89f767d935dcf178e1b
+      size: 939155305
+    - path: data/cleaned/PowerThefts_TRAIN.pqt
+      md5: 1a5c3e7c88ab4fe46a61ac40bcbe8115
+      size: 81864
+    - path: data/cleaned/Records_TEST.pqt
+      md5: 9218f819352cb73ad6c6a718b1a1efcf
+      size: 1721859
+    - path: data/cleaned/Records_TRAIN.pqt
+      md5: 1e3b92f114fc7d12b267ae3084986753
+      size: 17654358
+    - path: data/cleaned/Representations_TEST.pqt
+      md5: 09af8e37483951ed4d51f14c2c621a89
+      size: 992316
+    - path: data/cleaned/Representations_TRAIN.pqt
+      md5: 48c84d8128690afa3aaf9549b4308510
+      size: 9466553
+    - path: data/cleaned/Requests_TEST.pqt
+      md5: 6901f1e05f01964c2e5174d2be992e44
+      size: 571166
+    - path: data/cleaned/Requests_TRAIN.pqt
+      md5: 8505e15d4d97f9d48c707287e4a86d25
+      size: 17196842
+  preprocessing:
+    cmd: poetry run python src/preprocessing.py
+    deps:
+    - path: data/cleaned/Consumptions_TEST.pqt
+      md5: a55d3947d522ce6ebf12334696316cac
+      size: 59261862
+    - path: data/cleaned/Consumptions_TRAIN.pqt
+      md5: 21cd98d97039d89f767d935dcf178e1b
+      size: 939155305
+    - path: data/cleaned/PowerThefts_TRAIN.pqt
+      md5: 1a5c3e7c88ab4fe46a61ac40bcbe8115
+      size: 81864
+    - path: data/cleaned/Records_TEST.pqt
+      md5: 9218f819352cb73ad6c6a718b1a1efcf
+      size: 1721859
+    - path: data/cleaned/Records_TRAIN.pqt
+      md5: 1e3b92f114fc7d12b267ae3084986753
+      size: 17654358
+    - path: data/cleaned/Representations_TEST.pqt
+      md5: 09af8e37483951ed4d51f14c2c621a89
+      size: 992316
+    - path: data/cleaned/Representations_TRAIN.pqt
+      md5: 48c84d8128690afa3aaf9549b4308510
+      size: 9466553
+    - path: data/cleaned/Requests_TEST.pqt
+      md5: 6901f1e05f01964c2e5174d2be992e44
+      size: 571166
+    - path: data/cleaned/Requests_TRAIN.pqt
+      md5: 8505e15d4d97f9d48c707287e4a86d25
+      size: 17196842
+    outs:
+    - path: data/pivoted/test_users.pqt
+      md5: e164661bf90ea10021b466bc4b4efb0d
+      size: 1308981
+    - path: data/preprocessed/Consumptions_TEST.pqt
+      md5: 6c74806ced042e1643c40195cf8ec6db
+      size: 1800348
+    - path: data/preprocessed/Consumptions_TRAIN.pqt
+      md5: f3f7cfadeb65e1e77e41ab6d8ec2d97d
+      size: 20285695
+    - path: data/preprocessed/PowerThefts_TRAIN.pqt
+      md5: 910252161865b53af324a0d44dfa18e8
+      size: 36521
+    - path: data/preprocessed/Records_TEST.pqt
+      md5: 9da768fca8b00d366c2a4a55191c5b95
+      size: 1292202
+    - path: data/preprocessed/Records_TRAIN.pqt
+      md5: f741193fc524a734741811949d8c428e
+      size: 11074717
+    - path: data/preprocessed/Requests_TEST.pqt
+      md5: 58d23c1c17d8c3b2ed5cddf2b2882b62
+      size: 536399
+    - path: data/preprocessed/Requests_TRAIN.pqt
+      md5: d9ac70d38d158119ccda0a58da01fdc6
+      size: 12007763
+  pivot:
+    cmd: poetry run python src/pivot.py
+    deps:
+    - path: data/preprocessed/Consumptions_TEST.pqt
+      md5: 6c74806ced042e1643c40195cf8ec6db
+      size: 1800348
+    - path: data/preprocessed/Consumptions_TRAIN.pqt
+      md5: f3f7cfadeb65e1e77e41ab6d8ec2d97d
+      size: 20285695
+    - path: data/preprocessed/PowerThefts_TRAIN.pqt
+      md5: 910252161865b53af324a0d44dfa18e8
+      size: 36521
+    - path: data/preprocessed/Records_TEST.pqt
+      md5: 9da768fca8b00d366c2a4a55191c5b95
+      size: 1292202
+    - path: data/preprocessed/Records_TRAIN.pqt
+      md5: f741193fc524a734741811949d8c428e
+      size: 11074717
+    - path: data/preprocessed/Requests_TEST.pqt
+      md5: 58d23c1c17d8c3b2ed5cddf2b2882b62
+      size: 536399
+    - path: data/preprocessed/Requests_TRAIN.pqt
+      md5: d9ac70d38d158119ccda0a58da01fdc6
+      size: 12007763
+    outs:
+    - path: data/pivoted/data.pqt
+      md5: ddb6e9d7841033296a350750088d1d71
+      size: 55294758
