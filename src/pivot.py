@@ -10,8 +10,9 @@ sys.path.append(".")
 from src.utils import memory_reducer
 
 
-input_path = join("data", "preprocessed")
-output_path = join("data", "pivoted")
+project_path = "/content/drive/MyDrive/DEDDIE_Datathon"
+input_path = join(project_path, "npavin_data", "2.preprocessed_data")
+output_path = join(project_path, "npavin_data", "3.pivoted_data")
 
 logger.info("Pivot started")
 logger.info("Input path: {}", input_path)

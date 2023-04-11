@@ -2,66 +2,66 @@ stages:
   clean:
     cmd: poetry run python src/clean.py
     deps:
-    - data/raw/Records_TRAIN.csv
-    - data/raw/Representations_TRAIN.csv
-    - data/raw/Consumptions_TRAIN.csv
-    - data/raw/Requests_TRAIN.csv
-    - data/raw/PowerThefts_TRAIN.csv
-    - data/raw/Records_TEST.csv
-    - data/raw/Representations_TEST.csv
-    - data/raw/Consumptions_TEST.csv
-    - data/raw/Requests_TEST.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Records_TRAIN.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Representations_TRAIN.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Consumptions_TRAIN.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Requests_TRAIN.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/PowerThefts_TRAIN.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Records_TEST.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Representations_TEST.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Consumptions_TEST.csv
+    - /content/drive/MyDrive/DEDDIE_Datathon/Data/Requests_TEST.csv
     outs:
-    - data/cleaned/Records_TRAIN.pqt
-    - data/cleaned/Representations_TRAIN.pqt
-    - data/cleaned/Consumptions_TRAIN.pqt
-    - data/cleaned/Requests_TRAIN.pqt
-    - data/cleaned/PowerThefts_TRAIN.pqt
-    - data/cleaned/Records_TEST.pqt
-    - data/cleaned/Representations_TEST.pqt
-    - data/cleaned/Consumptions_TEST.pqt
-    - data/cleaned/Requests_TEST.pqt
-    - data/cleaned/ACCT_NBR_label_encoder.pkl
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Records_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Representations_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Consumptions_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Requests_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/PowerThefts_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Records_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Representations_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Consumptions_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Requests_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/ACCT_NBR_label_encoder.pkl
 
   preprocessing:
     cmd: poetry run python src/preprocessing.py
     deps:
-    - data/cleaned/Records_TRAIN.pqt
-    - data/cleaned/Representations_TRAIN.pqt
-    - data/cleaned/Consumptions_TRAIN.pqt
-    - data/cleaned/Requests_TRAIN.pqt
-    - data/cleaned/PowerThefts_TRAIN.pqt
-    - data/cleaned/Records_TEST.pqt
-    - data/cleaned/Representations_TEST.pqt
-    - data/cleaned/Consumptions_TEST.pqt
-    - data/cleaned/Requests_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Records_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Representations_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Consumptions_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Requests_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/PowerThefts_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Records_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Representations_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Consumptions_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/1.cleaned_data/Requests_TEST.pqt
     outs:
-    - data/preprocessed/Records_TRAIN.pqt
-    - data/preprocessed/Consumptions_TRAIN.pqt
-    - data/preprocessed/Requests_TRAIN.pqt
-    - data/preprocessed/PowerThefts_TRAIN.pqt
-    - data/preprocessed/Records_TEST.pqt
-    - data/preprocessed/Consumptions_TEST.pqt
-    - data/preprocessed/Requests_TEST.pqt
-    - data/pivoted/test_users.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Records_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Consumptions_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Requests_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/PowerThefts_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Records_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Consumptions_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Requests_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/3.pivoted_data/test_users.pqt
 
   pivot:
     cmd: poetry run python src/pivot.py
     deps:
-    - data/preprocessed/Consumptions_TRAIN.pqt
-    - data/preprocessed/Consumptions_TEST.pqt
-    - data/preprocessed/Requests_TRAIN.pqt
-    - data/preprocessed/Requests_TEST.pqt
-    - data/preprocessed/Records_TRAIN.pqt
-    - data/preprocessed/Records_TEST.pqt
-    - data/preprocessed/PowerThefts_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Consumptions_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Consumptions_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Requests_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Requests_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Records_TRAIN.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/Records_TEST.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/2.preprocessed_data/PowerThefts_TRAIN.pqt
     outs:
-    - data/pivoted/data.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/3.pivoted_data/data.pqt
   
   featurize:
     cmd: poetry run python src/featurize.py
     deps:
-    - data/pivoted/data.pqt
-    - data/pivoted/test_users.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/3.pivoted_data/data.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/3.pivoted_data/test_users.pqt
     outs:
-    - data/features/data.pqt
+    - /content/drive/MyDrive/DEDDIE_Datathon/npavin_data/4.ready_to_use_data/data.pqt

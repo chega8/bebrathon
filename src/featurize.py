@@ -8,8 +8,9 @@ sys.path.append(".")
 
 from src.utils import memory_reducer
 
-input_path = join("data", "pivoted")
-output_path = join("data", "features")
+project_path = "/content/drive/MyDrive/DEDDIE_Datathon"
+input_path = join(project_path, "npavin_data", "3.pivoted_data")
+output_path = join(project_path, "npavin_data", "4.ready_to_use_data")
 
 logger.info("Featurize started")
 logger.info("Input path: {}", input_path)

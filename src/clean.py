@@ -10,8 +10,9 @@ sys.path.append(".")
 
 from src.utils import date_handler, coord_preprocessing
 
-input_path = join("data", "raw")
-output_path = join("data", "cleaned")
+project_path = "/content/drive/MyDrive/DEDDIE_Datathon"
+input_path = join(project_path, "Data")
+output_path = join(project_path, "npavin_data", "1.cleaned_data")
 
 logger.info("Cleaning data started")
 logger.info("Input path: {}", input_path)

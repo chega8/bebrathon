@@ -9,8 +9,9 @@ sys.path.append(".")
 
 from src.utils import memory_reducer
 
-input_path = join("data", "cleaned")
-output_path = join("data", "preprocessed")
+project_path = "/content/drive/MyDrive/DEDDIE_Datathon"
+input_path = join(project_path, "npavin_data", "1.cleaned_data")
+output_path = join(project_path, "npavin_data", "2.preprocessed_data")
 
 logger.info("Preprocessing started")
 logger.info("Input path: {}", input_path)
@@ -220,7 +221,7 @@ def save_test_users(test_users):
     (
         test_users.reset_index()[["ACCT_NBR", "SUCCESSOR"]]
         .drop_duplicates()
-        .to_parquet(join("data", "pivoted", "test_users.pqt"))
+        .to_parquet(join(project_path, "npavin_data", "3.pivoted_data", "test_users.pqt"))
     )
 
 
