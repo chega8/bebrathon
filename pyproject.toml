@@ -1,0 +1,39 @@
+[tool.poetry]
+name = "bebrathon"
+version = "0.1.0"
+description = ""
+authors = ["Aleksandr Fida"]
+
+[tool.black]
+line-length = 99
+
+[tool.poetry.dependencies]
+python = "^3.10"
+scikit-learn = "^1.2.2"
+tqdm = "^4.65.0"
+seaborn = "^0.12.2"
+pandas = "^2.0.0"
+lightgbm = "^3.3.5"
+numpy = "^1.24.2"
+webdav4 = '^0.9.8'
+ossfs = '^2021.8.0'
+dvc-webhdfs = '^2.19.0'
+dvc-webdav = '^2.19.0'
+dvc-oss = '^2.19.0'
+dvc-hdfs = '^2.19.0'
+dvc-gs = '^2.20.0'
+dvc-gdrive = '^2.19.1'
+loguru = "^0.6.0"
+PyYAML = "^6.0"
+dvclive = "^1.0.1"
+black = "^22.10.0"
+pytest = "^7.2.0"
+pylint = "^2.15.5"
+matplotlib = "^3.6.2"
+dvc = "^2.53.0"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
